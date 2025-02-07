@@ -17,8 +17,8 @@ jobs:
       - image: "circleci/python:3.6.4"
     steps:
       - checkout
-      - run: pip install --upgrade pip
-      - run: pip install pytest
+      - run: python3 -m pip install --upgrade --user pip
+      - run: python3 -m pip install --user pytest
       - run: python3 test_main.py
 
 workflows:
