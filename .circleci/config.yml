@@ -16,8 +16,10 @@ jobs:
     docker:
       - image: "circleci/python:3.6.4"
     steps:
+      - install pytest
+      - run: pip install pytest -y
       - checkout
-      - run: python3 main-test.py
+      - run: python3 test_main.py
 
 workflows:
   build_and_test:
