@@ -16,10 +16,9 @@ jobs:
     docker:
       - image: "circleci/python:3.6.4"
     steps:
-      - run: install pytest
-      - run: run upgrade pip
-      - run: pip install pytest -y
       - checkout
+      - run: pip install --upgrade pip
+      - run: pip install pytest
       - run: python3 test_main.py
 
 workflows:
